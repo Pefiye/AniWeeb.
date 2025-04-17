@@ -1,0 +1,153 @@
+:root {
+    --bg: #1e1e1e;
+    --white: #fff;
+    --light-gray: #333;
+    --border: #555;
+    --button-gradient: linear-gradient(-45deg, #D44FE6, #00AAFF);
+    --red: #ff4d4d;
+    --green: #4dff88;
+  }
+  
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+  
+  form input[type="text"],
+  form select {
+    padding: 0.5rem;
+    background: #2a2a2a;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 1rem;
+    min-width: 150px;
+  }
+  
+  form button {
+    background: var(--button-gradient);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  form button:hover {
+    box-shadow: 0 0 12px #00aaff;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    overflow-x: auto;
+  }
+  
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  th {
+    background-color: var(--light-gray);
+  }
+  
+  td {
+    background-color: #2a2a2a;
+  }
+  
+  td:nth-child(3) {
+    font-weight: bold;
+    color: var(--green);
+  }
+  
+  td:nth-child(3):contains("Banned") {
+    color: var(--red);
+  }
+  
+  table form {
+    display: inline;
+  }
+  
+  table button {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-weight: bold;
+    background: #ff4d4d;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  table button:hover {
+    background: #ff4d4d;
+    box-shadow: 0 0 8px #ff626f5e;
+    color: white;
+  }
+  
+  @media (max-width: 600px) {
+    form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    table, thead, tbody, th, td, tr {
+      display: block;
+      width: 100%;
+    }
+  
+    thead {
+      display: none;
+    }
+  
+    tr {
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  
+    td {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem;
+      background-color: #2a2a2a;
+      border-bottom: none;
+      border-top: 1px solid var(--border);
+    }
+  
+    td:first-child {
+      border-top: none;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #ccc;
+    }
+  }
+  

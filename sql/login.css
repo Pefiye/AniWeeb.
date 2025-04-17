@@ -1,0 +1,145 @@
+:root {
+    --bg: #232323;
+    --blue: #00AAFF;
+    --purp: #D44FE6;
+    --white: #ffffff;
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle, #1b1b1b 26%, #0b0b0b 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.container {
+    width: 400px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(203, 203, 203, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+a
+{
+    text-decoration: none;
+
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 60px;
+    background: linear-gradient(-45deg, var(--purp) 20%, var(--blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 100px #00aaff50;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #111;
+    color: white;
+    outline: none;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #111;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #222;
+    box-shadow: 0 0 10px #ffffff17;
+}
+
+
+label {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#loginError,
+#registerError,
+#registerSuccess {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#loginError,
+#registerError {
+    color: red;
+}
+
+#registerSuccess {
+    color: limegreen;
+}
+
+
+#toggleForm {
+    display: none;
+}
+
+.toggle-label {
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.toggle-label:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#toggleForm ~ #showRegister {
+    display: block;
+}
+#toggleForm:checked ~ #showRegister {
+    display: none;
+}
+
+#toggleForm ~ #showLogin {
+    display: none;
+}
+#toggleForm:checked ~ #showLogin {
+    display: block;
+}

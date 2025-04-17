@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AniWeeb</title>
+  <link rel="stylesheet" href="discover.css" />
+      <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+
+      <!-- ========================================================================= -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+      <!-- ========================================================================= -->
+  
+</head>
+<body id="body">
+  <div class="vig"></div>
+  <div class="nav">
+    <a href="Home.html" class="logo">ANIWEEB</a>
+    <ul>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="https://pefiye.github.io/Portfolio">About</a></li>
+    </ul>
+    <form id="animeSearchForm" class="search" method="get" action="discover.html">
+      <input type="text" id="searchInput" name="q" placeholder="Search anime">
+      <input type="submit" value="▲" style="font-size: 20px;">
+    </form>
+    
+    <div style="display: flex; gap: 10px;">
+      <img src="icons/search.svg">
+      <a href="sql/profile.php" id="profile-button"><button>Profile</button></a>
+    </div>
+  </div>
+
+  <div class="sections" id="discover">
+    <h1>Discover Anime</h1>
+
+    <div class="filters">
+      <label for="genreFilter">Filter by Genre:</label>
+      <select id="genreFilter">
+        <option value="">All</option>
+        <option value="Action">Action</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Horror">Horror</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Romance">Romance</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Slice of Life">Slice of Life</option>
+      </select>
+    </div>
+
+    <div class="anime-grid" id="animeGrid"></div>
+  </div>
+
+  <script src="discover.js"></script>
+  <script>
+    const input = document.getElementById('searchInput');
+    const logo = document.querySelector('.logo');
+    const profile = document.getElementById('profile-button')
+    const body = document.getElementById('body')
+
+    if (window.innerWidth <= 480) {
+  input.addEventListener('focus', () => {
+    logo.style.display = 'none';
+    profile.style.display = 'none';
+  });
+
+  input.addEventListener('blur', () => {
+    logo.style.display = '';
+    profile.style.display = '';
+  });
+}
+
+
+    
+  </script>
+  
+</body>
+</html>

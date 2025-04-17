@@ -1,0 +1,354 @@
+:root {
+  --bg: #232323;
+  --blue: #00AAFF;
+  --purp: #D44FE6;
+  --white: #ffffff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 3;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+a
+{
+    text-decoration: none;
+
+}
+
+.vig {
+  background: radial-gradient(circle, #1b1b1b 26%, #0b0b0b 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  z-index: 999; 
+  background-color: var(--bg); 
+  gap: 20px;
+  align-items: center;
+  transition: .2s ease-in-out;
+}
+
+
+.nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav ul li a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  text-shadow: 0 0 30px white;
+  transition: .2s;
+}
+
+.nav ul li a:hover {
+  text-shadow: 0 0 40px white;
+}
+
+.nav a button {
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 10px 14px;
+  color: white;
+  box-shadow: 0 0 70px #00aaff50;
+  background: linear-gradient(-45deg, var(--purp), var(--blue));
+  transition: .2s;
+  min-width: 80px;
+  cursor: pointer;
+}
+
+.nav a button:hover {
+  box-shadow: 0 0 70px #00aaff70;
+}
+
+.nav img {
+  display: none;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 30px;
+  background: linear-gradient(-45deg, var(--purp) 20%, var(--blue) 100%);
+  text-shadow: 0 0 100px #00aaff50;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.logo:hover {
+  text-shadow: 0 0 100px #00aaff80;
+}
+
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.logout-button {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.sign-in-btn {
+  background: linear-gradient(to right, #00f, #f0f);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+.search {
+  display: flex;
+  width: 60%;
+  border: 1.7px solid var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.search input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  outline: none;
+}
+
+.search input[type="submit"] {
+  width: 10%;
+  border: none;
+  background: transparent;
+  color: var(--white);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.highlight {
+  margin-top: 100px;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.highlight .righty {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.highlight .fade-thing {
+  width: 50%;
+  height: 100%;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+.highlight .fade-thing h1 {
+  font-size: 36px;
+}
+
+.highlight .fade-thing h4 {
+  font-weight: 400;
+  font-size: 14px;
+  width: 80%;
+  line-height: 1.4;
+}
+
+.highlight .fade-thing button {
+  padding: 10px 20px;
+  width: max-content;
+  background: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+  text-shadow: 0 0 30px white;
+  transition: transform .2s;
+  cursor: pointer;
+}
+
+.highlight .fade-thing button:hover {
+  transform: scale(0.95);
+}
+
+.highlight .fade-thing button:active {
+  transform: scale(0.9);
+}
+
+.highlight img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.filters
+{
+  margin-top: 70px;
+}
+
+.sections {
+  color: var(--white);
+  padding: 20px;
+}
+
+.sections h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.anime-tab {
+  background-color: #ffffff14;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s;
+  cursor: pointer;
+  box-shadow:   0 0 1px white;
+}
+
+.anime-tab:hover {
+  transform: scale(1.03);
+  box-shadow:   0 0 3px white;
+
+}
+
+.anime-tab img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.anime-tab h1 {
+  font-size: 14px;
+  color: var(--white);
+}
+
+.anime-tab h4 {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--white);
+}
+
+.anime-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+  align-items: center;
+  justify-items: center;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .highlight {
+      height: auto;
+      flex-direction: column;
+  }
+
+  .highlight .righty {
+      flex-direction: column;
+  }
+
+  .highlight img,
+  .highlight .fade-thing {
+      width: 100%;
+      clip-path: none;
+      text-align: center;
+  }
+
+  .highlight .fade-thing h4 {
+      width: 100%;
+  }
+
+  .search {
+      width: 100%;
+  }
+
+
+  .nav ul {
+      display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .logo {
+      font-size: 12px;
+  }
+
+  .highlight .fade-thing h1 {
+      font-size: 24px;
+  }
+
+  .highlight .fade-thing h4 {
+      font-size: 12px;
+  }
+
+  .anime-tab {
+      width: 150px;
+  }
+
+  .search input[type="submit"] {
+      display: none;
+  }
+}

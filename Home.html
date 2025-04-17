@@ -1,0 +1,100 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniWeeb</title>
+    <link rel="stylesheet" href="home.css">
+        <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+
+    <!-- ========================================================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- ========================================================================= -->
+</head>
+<body>
+    <div class="vig"></div>
+    <div class="nav">
+        <a href="index.html" class="logo">ANIWEEB</a>
+        <ul>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="https://pefiye.github.io/Portfolio/">About</a></li>
+        </ul>
+        <form id="animeSearchForm" class="search" action="discover.html" method="get">
+          <input type="text" id="searchInput" name="q" placeholder="Search anime">
+          <input type="submit" value="▲" style="font-size: 20px;">
+        </form>
+        
+        <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="discover.html"><img src="icons/search.svg"></a>
+        <a href="sql/profile.php"><button>Profile</button></a>
+
+        </div>
+    </div>
+    
+    <div class="highlight">
+        <div class="righty">
+          <div class="fade-thing">
+            <h1><?= htmlspecialchars($title) ?></h1>
+            <h4 class="anime-description"><?= htmlspecialchars($description) ?></h4>
+            <a href="anime.php?id=16498"><button>READ MORE</button></a>
+            
+          </div>
+          <img src="https://wallpapercave.com/wp/wp4769472.jpg">
+        </div>
+      </div>
+
+<div class="sections" id="section1">
+    <h1>TOP 10 ANIME OF ALL TIME 🔥🔥🔥</h1>
+    <div class="anime-tab-scroll"></div>
+</div>
+
+<div class="sections" id="section2">
+    <h1>RECENT RELEASES</h1>
+    <div class="anime-tab-scroll"></div>
+</div>
+
+<div class="sections" id="discover">
+  <h1>Discover Anime</h1>
+  <div class="anime-grid" id="animeGrid"></div>
+</div>
+
+<script src="discover.js"></script>
+<script src="script.js"></script>
+<script>
+  function toggleLogout() {
+    const form = document.getElementById("logoutForm");
+    form.style.display = form.style.display === "none" ? "block" : "none";
+  }
+
+        const trailer = document.getElementById("trailer"); 
+        window.onmousemove = e => { 
+        const x = e.clientX -trailer.offsetWidth / 5;
+        const y = e.clientY -trailer.offsetHeight / 5; 
+
+        trailer.style.transform = `translate(${x}px, ${y}px)`; 
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+    const maxLength = 200;
+    const descriptions = document.querySelectorAll('.anime-description');
+
+    descriptions.forEach(desc => {
+      const text = desc.textContent.trim();
+
+      if (text.length > maxLength) {
+        const trimmed = text.slice(0, maxLength).trimEnd();
+        desc.textContent = trimmed + '...';
+      }
+    });
+  });
+
+
+</script>
+
+</body>
+</html>

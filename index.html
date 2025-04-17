@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniWeeb</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <!-- ========================================================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- ========================================================================= -->
+</head>
+<body>
+    <div class="vig"></div>
+    <div class="nav">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="https://pefiye.github.io/Portfolio">About</a></li>
+        </ul>
+        <input type="checkbox" id="checkb"><span class="checkmark"></span>
+        <div class="nav-burger">
+            <ul>
+                <li><a onclick="closeburger()">⨉</a></li>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="https://pefiye.github.io/Portfolio">About</a></li>
+                <a href="sql/profile.php"><button>Profile</button></a>
+            </ul>
+        </div>
+
+        <a href="sql/profile.php"><button>Profile</button></a>
+    </div>
+    <h1>AniWeeb</h1>
+    <h4>An anime a day keeps the soap away</h4>
+    <form id="animeSearchForm" class="search" action="discover.html" method="get">
+        <input type="text" id="searchInput" name="q" placeholder="Search anime">
+        <input type="submit" value="▲" style="font-size: 20px;">
+      </form>
+      
+      
+    
+
+
+    <div id="trailer"></div>
+    <script src="script.js"></script>
+    <script src="discover.js"></script>
+    <script>
+        const trailer = document.getElementById("trailer"); 
+        window.onmousemove = e => { 
+        const x = e.clientX -trailer.offsetWidth / 5;
+        const y = e.clientY -trailer.offsetHeight / 5; 
+
+        trailer.style.transform = `translate(${x}px, ${y}px)`; 
+        }
+
+
+        function closeburger()
+        {
+            let check = document.getElementById("checkb");
+            check.checked = false;
+        }
+
+    </script>
+</body>
+</html>
